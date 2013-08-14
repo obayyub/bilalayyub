@@ -44,12 +44,6 @@ function startWatch($scope) {
   	}
   });
 	$scope.addPerson = function() {
-		var currentDate = new Date();
-	  var day = currentDate.getDate();
-	  var month = currentDate.getMonth() + 1;
-	  var year = currentDate.getFullYear();
-		$scope.newPerson.date =  month + "/" + day + "/" + year;
-		console.log($scope.newPerson);
 		$scope.people.push($scope.newPerson);
 		$scope.newPerson= '';
 	};
