@@ -44,6 +44,11 @@ function startWatch($scope) {
   	}
   });
 	$scope.addPerson = function() {
+    Date.now = function() {
+      return new Date().valueOf();
+    }
+    var myDate = new Date(Date.now());
+    console.log(myDate);
 		$scope.people.push($scope.newPerson);
 		$scope.newPerson= '';
 	};
