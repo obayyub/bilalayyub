@@ -2,8 +2,7 @@
 <html ng-app='myApp'>
 <head>
   <title>Bayyub</title>
-  <link rel="stylesheet" href="assets/bootstrap.min.css"/>
-  <link rel="stylesheet" href="assets/app.css">
+  <%= stylesheet_link_tag "application", :media => "all" %>
 </head>
 <body>
 
@@ -11,12 +10,6 @@
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-<script src="assets/ui-bootstrap-tpls-0.5.0.js"></script>
 <script src="https://cdn.firebase.com/v0/firebase.js"></script>
-<script src="assets/angularfire.min.js"></script>
-<script src="assets/app.js"></script>
-<script src="assets/services.js"></script>
-<script src="assets/controllers.js"></script>
-<script src="assets/filters.js"></script>
-<script src="assets/directives.js"></script>
+<%= javascript_include_tag "application" %>
 </html>
