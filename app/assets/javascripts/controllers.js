@@ -44,7 +44,7 @@ function startWatch($scope) {
   	}
   });
 	$scope.addPerson = function() {
-    var currentDate = moment().format('MMMM Do YYYY');
+    var currentDate = moment().format('YYYY-MM-DD');
     console.log(currentDate);
 		$scope.newPerson.date =  currentDate;
 		$scope.people.push($scope.newPerson);
