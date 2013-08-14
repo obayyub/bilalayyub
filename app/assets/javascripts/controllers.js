@@ -19,7 +19,6 @@ angular.module('myApp.controllers', ['firebase', 'ui.bootstrap']).
   	var url = 'https://bayyub.firebaseio.com/people';
     var promise = angularFire(url, $scope, 'people', []);
     $scope.newPerson = {};
-    $scope.currentDate = moment().format('YYYY-MM-DD');
 
     promise.then(function() {
     	startWatch($scope);
@@ -45,6 +44,8 @@ function startWatch($scope) {
   	}
   });
 	$scope.addPerson = function() {
+    currentDate = moment().format('YYYY-MM-DD');
+    $scope.newPerson.date = currentDate;
 		$scope.people.push($scope.newPerson);
 		$scope.newPerson= '';
 	};
