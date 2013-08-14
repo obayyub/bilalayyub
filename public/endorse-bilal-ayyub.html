@@ -1,3 +1,18 @@
+<script type="text/javascript">
+$('[placeholder]').focus(function() {
+  var input = $(this);
+  if (input.val() == input.attr('placeholder')) {
+    input.val('');
+    input.removeClass('placeholder');
+  }
+}).blur(function() {
+  var input = $(this);
+  if (input.val() == '' || input.val() == input.attr('placeholder')) {
+    input.addClass('placeholder');
+    input.val(input.attr('placeholder'));
+  }
+}).blur();
+</script>
 <div class='row'>
 	<div class='col-lg-2'></div>
 	<div class='col-lg-8'>
