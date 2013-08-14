@@ -1,0 +1,36 @@
+<div class='row'>
+	<div class='col-lg-2'></div>
+	<div class='col-lg-8'>
+		<center>
+		<div collapse='isButtonCollapsed'>
+			<button class="btn btn-default btn-lg" ng-click="isButtonCollapsed = !isButtonCollapsed; isCollapsed = !isCollapsed">Endorse Bilal Ayyub!</button>
+		</div>
+		<div collapse="isCollapsed">
+			<h4>Please fill out the following information. Only your name and city will be displayed:</h4>
+			<form class='form-inline'>
+		  <input type="text" class='form-control form-padding' ng-model="newPerson.name" placeholder="Name" />
+		  <input type="text" class='form-control form-padding' ng-model="newPerson.city" placeholder="City" />
+		  <input type="text" class='form-control form-padding' ng-model="newPerson.state" placeholder="State" />
+			</form>
+			<form class='form-inline'>
+			  <input type="text" class='form-control form-padding' ng-model="newPerson.affiliation" placeholder="Affiliation" />
+			  <input type="text" class='form-control form-padding' ng-model="newPerson.email" placeholder="Email" />
+			  <input type="text" class='form-control form-padding' ng-model="newPerson.phone" placeholder="Phone Number" />
+			</form>
+			<button class='btn btn-warning btn-lg form-padding' ng-click="addPerson(); isCollapsed = !isCollapsed; showThankYou = true">Submit Endorsement</button>
+		</div>
+		<div ng-show='showThankYou'><h1>Thank You For Your Support!</h1></div>
+		<hr>
+		</center>
+	  <br/>
+	  <h3>Bilal Ayyub's Supporters</h3>
+	  <table class='table table-striped'>
+	    <thead>
+	      <th>Name</th><th>City</th><th>Date</th>
+	    </thead>
+	    <tr ng-repeat="person in filteredPeople = (people) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit"><td>{{person.name}}</td><td>{{person.city}}, {{person.state}}</td><td>{{person.date}}</td></tr>
+	  </table>
+	  <pagination data-boundary-links="true" data-num-pages="noOfPages" data-current-page="currentPage" max-size="maxSize" class="pagination-small" data-previous-text="&laquo;" data-next-text="&raquo;"></pagination>
+	</div>
+	<div class='col-lg-2'></div>
+</div>
