@@ -1,3 +1,10 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.carousel').carousel({
+      interval: 1200
+    })
+  });
+</script>
 <div class='row'>
 	<div class='col-lg-2'></div>
 	<div class='col-lg-8'>
@@ -7,16 +14,32 @@
 		</div>
 		<div collapse="isCollapsed">
 			<h4>Please fill out the following information. Only your name and city will be displayed:</h4>
-			<form class='form-inline'>
-		  <input type="text" class='form-control form-padding' ng-model="newPerson.name" placeholder="Name" />
-		  <input type="text" class='form-control form-padding' ng-model="newPerson.city" placeholder="City" />
-		  <input type="text" class='form-control form-padding' ng-model="newPerson.state" placeholder="State" />
-			</form>
-			<form class='form-inline'>
-			  <input type="text" class='form-control form-padding' ng-model="newPerson.affiliation" placeholder="Affiliation" />
-			  <input type="text" class='form-control form-padding' ng-model="newPerson.email" placeholder="Email" />
-			  <input type="text" class='form-control form-padding' ng-model="newPerson.phone" placeholder="Phone Number" />
-			</form>
+			<div class='row'>
+				<div class='col-lg-4'>
+				<form class='form-inline'>
+			  	<label for="nameInput">Name</label>
+			  	<input type="text" id='nameInput' class='form-control form-padding' ng-model="newPerson.name" placeholder="Name" />
+			  	<label for="affiliationInput">Affiliation</label>
+				  <input type="text" id='affiliationInput' class='form-control form-padding' ng-model="newPerson.affiliation" placeholder="Affiliation" />
+			  </form>
+			  </div>
+			  <div class='col-lg-4'>
+			  <form class='form-inline'>
+			  	<label for="cityInput">City</label>
+			  	<input type="text" id='cityInput' class='form-control form-padding' ng-model="newPerson.city" placeholder="City" />
+			  	<label for="phoneInput">Phone</label>
+				  <input type="text" id='phoneInput' class='form-control form-padding' ng-model="newPerson.phone" placeholder="Phone Number" />
+				</form>
+				</div>
+				<div class='col-lg-4'>
+				<form class='form-inline'>
+					<label for="stateInput">State</label>
+			  	<input type="text" id='stateInput' class='form-control form-padding' ng-model="newPerson.state" placeholder="State" />
+				  <label for="emailInput">Email</label>
+				  <input type="text" id='emailInput' class='form-control form-padding' ng-model="newPerson.email" placeholder="Email" />
+				</form>
+				</div>
+			</div>
 			<button class='btn btn-warning btn-lg form-padding' ng-click="addPerson(); isCollapsed = !isCollapsed; showThankYou = true">Submit Endorsement</button>
 		</div>
 		<div ng-show='showThankYou'><h1>Thank You For Your Support!</h1></div>
