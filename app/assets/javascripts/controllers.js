@@ -7,8 +7,8 @@ angular.module('myApp.controllers', ['firebase', 'ui.bootstrap']).
     $scope.isCollapsed = true;
     $scope.isButtonCollapsed = false;
     $scope.currentPage = 1; //current page
-    $scope.maxSize = 5; //pagination max size
-    $scope.entryLimit = 5; //max rows for data table
+    $scope.maxSize = 10; //pagination max size
+    $scope.entryLimit = 10; //max rows for data table
     $scope.people = [];
 
     /* init pagination with $scope.list */
