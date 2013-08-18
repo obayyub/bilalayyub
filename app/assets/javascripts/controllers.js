@@ -10,6 +10,7 @@ angular.module('myApp.controllers', ['firebase', 'ui.bootstrap']).
     $scope.maxSize = 10; //pagination max size
     $scope.entryLimit = 10; //max rows for data table
     $scope.people = [];
+    $scope.isValid = true;
 
     /* init pagination with $scope.list */
     $scope.setPage = function(pageNo) {
@@ -44,9 +45,16 @@ function startWatch($scope) {
   	}
   });
 	$scope.addPerson = function() {
-    currentDate = moment().format('YYYY-MM-DD');
-    $scope.newPerson.date = currentDate;
-		$scope.people.push($scope.newPerson);
-		$scope.newPerson= '';
+    if(!$scope.newPerson.name) {
+      $scope.isValid = false;
+    } else {
+      $scope.isCollapsed = !$scope.isCollapsed
+      $scope.showThankYou = true
+      $scope.isValid = true;
+      var currentDate = moment().format('YYYY-MM-DD');
+      $scope.newPerson.date = currentDate;
+      $scope.people.push($scope.newPerson);
+      $scope.newPerson= '';
+    };
 	};
 };

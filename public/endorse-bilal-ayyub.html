@@ -14,6 +14,7 @@
 		</div>
 		<div collapse="isCollapsed">
 			<h4>Please fill out the following information. Only your name and city will be displayed:</h4>
+			<div class='alert alert-danger alert-name' ng-hide='isValid'><h4><i class="icon-exclamation-sign"> </i>Please give your full name before submitting</h4></div>
 			<div class='row'>
 				<div class='col-lg-4'>
 				<form class='form-inline'>
@@ -40,13 +41,13 @@
 				</form>
 				</div>
 			</div>
-			<button class='btn btn-warning btn-lg form-padding' ng-click="addPerson(); isCollapsed = !isCollapsed; showThankYou = true">Submit Support</button>
+			<button class='btn btn-warning btn-lg form-padding' ng-click="addPerson()">Submit Support</button>
 		</div>
 		<div ng-show='showThankYou'><h1>Thank You For Your Support!</h1></div>
 		<hr>
 		</center>
 	  <br/>
-	  <h3>Bilal Ayyub's Supporters</h3>
+	  <h3>Bilal Ayyub's {{people.length}} Supporters</h3>
 	  <div style='color: #FFFFFF'>{{currentDate}}</div>
 	  <table class='table table-striped'>
 	    <thead>
