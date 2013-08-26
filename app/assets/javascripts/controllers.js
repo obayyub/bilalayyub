@@ -23,6 +23,7 @@ angular.module('myApp.controllers', ['firebase', 'ui.bootstrap']).
 
     promise.then(function() {
     	startWatch($scope);
+      console.log($scope.people);
     });
   }])
   .controller('NewsCtrl', ['$scope', 'angularFire', function($scope, angularFire) {
